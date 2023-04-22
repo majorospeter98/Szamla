@@ -110,7 +110,7 @@ form.addEventListener("submit", (e) => {
     alert("Sikeres regisztráció");
     teszt2.push(regusers);
     localStorage.setItem(localkey, JSON.stringify(teszt2));
-        window.location.href = "../login/login.html";
+        window.location.href = "../login/index.html";
         connect.push(teszt2);
   }
 });
