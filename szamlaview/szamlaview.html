@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Számla megtekintő</title>
+    <link rel="stylesheet" href="szamlaview.css">
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"> </script>
+    <script src="szamlaview.js" defer></script>
+</head>
+<body>
+  <main>
+    <form id="form">
+        <div class="errorlist">
+        </div>
+        <div>
+      <label for="vasarlonev">  <input type="text" name="vasarlonev" id="vasarlonev" required placeholder="Vásárló neve" maxlength="40" readonly=""></label><br>
+      </div>
+      <div>
+      <label for="kidatum">  <input type="date" name="kidatum" id="kidatum" required placeholder="Kiállítás dátuma"  min="2023-04-17" max='2024-04-30' readonly> </label><br>
+      </div>
+      <div>
+      <label for="esdatum">  <input type="date" name="esdatum" id="esdatum" required placeholder="Esedékesség dátuma" min="2023-04-17" max='2025-04-30' readonly> </label><br>
+      </div>
+      <div>
+      <label for="tetelnev">  <input type="text" name="tetelnev" id="tetelnev" required placeholder="Tétel neve" maxlength="35" readonly> </label><br>
+      </div>
+      <div>
+     <textarea name="komment" id="komment" required placeholder="Komment" maxlength="600" readonly></textarea>
+      </div>
+      <div>
+        <label for="ar">  <input type="number" name="ar" id="ar" required placeholder="Ár" min="10000" max="10000000" readonly> </label><br>
+        </div>
+      <div>
+                <a href="../main/main.html"><button type="button" value="Vissza"   style="margin-top:1rem;color:black;">Vissza </button></a>
+    </div>
+   </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="register.css">
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"> </script>
+    <script src="register.js" defer></script>
+</head>
+<body>
+  <main>
+        <form id="registerform">
+        <div class="errorlist">
+        </div>
+        <div>
+      <label for="nev">  <input type="text" name="nev" id="nev" required placeholder="Név" maxlength="20" pattern=^([^0-9]*)$ pattern=^[A-Za-z]+$> </label><br>
+      </div>
+      <div>
+      <label for="fnev">  <input type="text" name="fnev" id="fnev" required placeholder="Felhasználónév" maxlength="20"> </label> <br>
+      </div>
+      <div>
+      <label for="pw">  <input type="password" name="pw" id="pw" required placeholder="Jelszó" maxlength="30"></label> <br>
+      </div>
+      <div>
+        <input type="submit" value="Regisztráció" disabled class="register"> 
+    </div>
+    <div style="display:flex;justify-content:center;text-align: center;align-items: center;">
+    <a href="../login/login.html"><button type="button" class="back" style="display:flex;justify-content: center;text-align: center;align-items: center;">Vissza</button></a>
+    </div>
+    </form>
+</main>
+    </body>
+</html>

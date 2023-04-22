@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+}
+
+body {
+  background: #4b6cb7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #182848,
+    #4b6cb7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #182848,
+    #4b6cb7
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100vh;
+}
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gap {
+  margin-top: 1rem;
+}
+#text {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+}
+.pass {
+  border-radius: 1rem;
+  color: red;
+}
+#userinput,
+.pass {
+  margin-top: 1rem;
+}
+#text input[type="text"],
+input[type="password"] {
+  border: 1px black solid;
+  padding-left: 1rem;
+}
+#text input[type="text"],
+input[type="password"] {
+  width: 80%;
+  outline: none;
+  font-size: 20px;
+  border-radius: 100px;
+  height: 45px;
+}
+button#reload-button {
+  font-size: 26px;
+  margin-top: 1rem;
+  background-color: #8052ec;
+  border-radius: 0.4em;
+  color: #ffffff;
+}
+#canvas {
+  border: 1px solid #000000;
+  border-radius: 0.4em;
+  color: white;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+button#reload-button {
+  font-size: 26px;
+  width: 4.6em;
+  background-color: #8052ec;
+  border: none;
+  border-radius: 0.4em;
+  color: #ffffff;
+}
+.buttons button,
+input[type="submit"] {
+  display: inline-block;
+  font-size: 1.6rem;
+  width: 80%;
+  border-radius: 100px;
+  border: 1px black dotted;
+}
+:disabled {
+  background-color: rgb(150, 148, 148);
+  cursor: not-allowed;
+  pointer-events: none;
+  text-decoration: line-through;
+  font-size: 1.1rem;
+}
+.buttons button:hover,
+input[type="submit"]:hover {
+  cursor: pointer;
+  border: none;
+}
+.check {
+display:none;
+}
+.show {
+  display: flex;
+}

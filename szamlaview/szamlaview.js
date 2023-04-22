@@ -1,0 +1,20 @@
+let vasarlo=document.querySelector("#vasarlonev");
+let kidatum=document.querySelector("#kidatum");
+let esdatum=document.querySelector("#esdatum");
+let tetelnev=document.querySelector("#tetelnev");
+let komment=document.querySelector("#komment");
+let ar=document.querySelector("#ar");
+let form=document.querySelector("#form");
+let submit=document.querySelector(".submit");
+const localprefix= "Register";
+const localkey= `${localprefix}-szamla`;
+let teszt=localStorage.getItem(localkey);
+let teszt2=(JSON.parse(teszt));
+let teszt3=teszt2[0];
+vasarlo.value=teszt3.vasarlonev;
+kidatum.value=teszt3.kiallitasdatum;
+esdatum.value=teszt3.esedekessegdatum;
+tetelnev.value=teszt3.tetelnev;
+komment.value=teszt3.komment;
+ar.value=teszt3.ar;
+

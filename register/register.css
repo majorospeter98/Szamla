@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+body {
+  background: #4b6cb7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #182848,
+    #4b6cb7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #182848,
+    #4b6cb7
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100vh;
+}
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+}
+#registerform {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+}
+label {
+  display: block;
+}
+#registerform input[type="text"],
+input[type="password"] {
+  border: 1px black solid;
+  padding-left: 1rem;
+}
+#registerform input[type="text"],
+input[type="password"] {
+  width: 80%;
+  outline: none;
+  font-size: 20px;
+  border-radius: 100px;
+  height: 45px;
+}
+.buttons button,
+input[type="submit"] {
+  display: inline-block;
+  font-size: 1.6rem;
+  width: 80%;
+  border-radius: 100px;
+  border: 1px black dotted;
+}
+:disabled {
+  background-color: rgb(150, 148, 148);
+  cursor: not-allowed;
+  pointer-events: none;
+  text-decoration: line-through;
+  font-size: 1.1rem;
+}
+.buttons button:hover,
+input[type="submit"]:hover {
+  cursor: pointer;
+  border: none;
+}
+.back {
+  height: 50px;
+  width: 200px;
+  max-width: 220px;
+  border-radius: 100px;
+  outline: none;
+  border: none;
+  background-color: gray;
+  color: white;
+}
+.errorlist {
+  color: red;
+  font-size: 1.5rem;
+}

@@ -1,0 +1,21 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+.create{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.create button{
+display:inline-block;
+width:300px;
+        outline:none;
+        font-size:20px;
+        border-radius: 100px;
+        height:45px;
+        border:1px black solid;
+        padding-left:1rem;
+}
