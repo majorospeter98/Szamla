@@ -62,13 +62,13 @@ form.addEventListener("submit", (e) => {
       komment: szamla5,
       ar: szamla6,
     };
-    let teszt = localStorage.getItem(localkey);
-    let teszt2 = JSON.parse(teszt);
-    if (teszt2 == null) {
-      teszt2 = [];
+    let szamla = localStorage.getItem(localkey);
+    let szamlainfos = JSON.parse(szamla);
+    if (szamlainfos == null) {
+      szamlainfos = [];
     }
-    teszt2.push(szamlauser);
-    connect.push(teszt2);
-    localStorage.setItem(localkey, JSON.stringify(teszt2));
+    szamlainfos.push(szamlauser);
+    connect.push(szamlainfos);
+    localStorage.setItem(localkey, JSON.stringify(szamlainfos));
   }
 });

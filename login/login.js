@@ -14,8 +14,6 @@ let userInput = document.getElementById("user-input");
 let canvas = document.getElementById("canvas");
 let reloadButton = document.getElementById("reload-button");
 let text = "";
-
-
    
 form.addEventListener("input", (e) => {
   let error1 = [];
@@ -119,8 +117,7 @@ form.addEventListener("submit", (e) => {
     }
     //Initial Function
     function triggerFunction() {
-      
-      //clear Input
+            //clear Input
       userInput.value = "";
       text = textGenerator();
          //Randomize the text so that everytime the position of numbers and small letters is random
@@ -152,6 +149,4 @@ form.addEventListener("submit", (e) => {
       }
     });
   }
-   
-  
-});
+   });

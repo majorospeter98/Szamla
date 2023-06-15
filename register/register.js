@@ -23,7 +23,6 @@ form.addEventListener("input", (e) => {
   let error1 = [];
   let error2 = [];
   let error3 = [];
-
   errorlist.innerHTML = "";
   const value1 = document.getElementById("nev").value;
   const value2 = document.getElementById("fnev").value;
@@ -36,8 +35,7 @@ let tesztnumber=numberorno.test(value3)
     register.setAttribute("disabled", "");
     error1.push("Túl rövid a név");
   }
- 
-  if (fnev.value.length > 7) {
+   if (fnev.value.length > 7) {
     register.removeAttribute("disabled");
   } else {
     register.setAttribute("disabled", "");
@@ -96,21 +94,21 @@ form.addEventListener("submit", (e) => {
     regpw: user3,
     regdate: "",
   };
-  let teszt = localStorage.getItem(localkey);
-  let teszt2 = JSON.parse(teszt);
-  if (teszt2 == null) {
-    teszt2 = [];
+  let getregister = localStorage.getItem(localkey);
+  let register = JSON.parse(getregister);
+  if (register == null) {
+    register = [];
   }
-  let finduser = teszt2.find((user) => {
+  let finduser = register.find((user) => {
     return user.regfnev === fnev.value;
   })
    if (finduser != undefined) {
     window.alert("Van már ilyen felhasználónév");
   } else {
     alert("Sikeres regisztráció");
-    teszt2.push(regusers);
-    localStorage.setItem(localkey, JSON.stringify(teszt2));
+    register.push(regusers);
+    localStorage.setItem(localkey, JSON.stringify(register));
         window.location.href = "../login/index.html";
-        connect.push(teszt2);
+        connect.push(register);
   }
 });
