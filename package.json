@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/majorospeter98/Szamla#readme",
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "jest": "^29.5.0"
   }
 }
