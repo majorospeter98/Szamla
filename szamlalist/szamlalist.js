@@ -7,9 +7,9 @@ if (szamlainfos == undefined) {
   szamlainfos = [];
 }
 for (let i = 0; i < szamlainfos.length; i++) {
-  table.innerHTML +=
-    "<tr><td>" +
-    szamlainfos[i]["vasarlonev"] +
+  table.innerHTML += 
+    "<tr><td>" + 
+    szamlainfos[i]["vasarlonev"]  +
     "</td><td>" +
     szamlainfos[i]["kiallitasdatum"] +
     "</td><td>" +

@@ -4,7 +4,7 @@ const form = document.querySelector("#text");
 const register = document.querySelector(".teszt");
 const pass = document.querySelector(".pass");
 const localprefix = "Register";
-const localkey = `${localprefix}-registered`;
+const localkey =  `${localprefix}-registered`;
 const localkey2 = `${localprefix}-currentuser`;
 const check = document.querySelector(".check");
 let counter = 0;
@@ -14,62 +14,58 @@ let userInput = document.getElementById("user-input");
 let canvas = document.getElementById("canvas");
 let reloadButton = document.getElementById("reload-button");
 let text = "";
-   
-form.addEventListener("input", (e) => {
-  let error1 = [];
-  let error2 = [];
-  let checkerror = [];
-  pass.innerHTML = "";
-  if (felh.value.length > 7) {
-    register.removeAttribute("disabled");
-  } else {
-    error1.push("Nem elég hosszú a felhasználónév");
+let checkerror=[]
+  form.addEventListener("input", (e) => {
+  let errors=[];
+    pass.innerHTML = "";
+  if (felh.value.length < 7) {
+    errors.push("Rövid a felhasználónév")
   }
-  if (password.value.length > 7) {
-    register.removeAttribute("disabled");
-  } else {
-    error2.push("Túl rövid a jelszó");
-  }
-  const s = [...password.value];
-  let s2 = s.some((element) => {
+    if (password.value.length < 7) {
+      errors.push("Túl rövid a jelszó");
+     } 
+    const upper = [...password.value];
+  let uppercheck = upper.some((element) => {
     return element === element.toUpperCase();
   });
-  if (s2 === true) {
-    register.removeAttribute("disabled");
-  } else {
-    error2.push("Nagybetű/szám kötelező a jelszóban");
+  if (uppercheck === true) {
+      } else {
+    errors.push("Nagybetű/szám kötelező a jelszóban");
   }
-  error2.forEach((errortwo) => {
+    errors.forEach((error) => {
     const div = document.createElement("div");
-    div.innerHTML = errortwo;
+    div.innerHTML = error;
     pass.appendChild(div);
   });
-  error1.forEach((errorone) => {
-    const div = document.createElement("div");
-    div.innerHTML = errorone;
-    pass.appendChild(div);
-  });
-  if (error1.length > 0 || error2.length > 0) {
+  if (errors.length > 0 ) {
     register.setAttribute("disabled", "");
   }
-});
+  else{
+    register.removeAttribute("disabled");
+  }
+  });
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  let teszt = localStorage.getItem(localkey);
-  let teszt2 = JSON.parse(teszt);
-  let index = teszt2.findIndex((element) => {
-    return element.regfnev === felh.value;
-  });
-   if (index == -1 || teszt2[index].regpw != password.value) {
-    alert("Hibás jelszó/felhasználónév");
-    counter++;
-      } else {
-    let currentfelh = teszt2[index].regfnev;
-    teszt2[index].regdate = new Date().toLocaleString().replace(",", "");
-    localStorage.setItem(localkey, JSON.stringify(teszt2));
-    localStorage.setItem(localkey2, JSON.stringify(currentfelh));
-    window.location.href = "../main/main.html";
+  let setText = localStorage.getItem(localkey);
+  let getText = JSON.parse(setText);
+   if(getText==null){
+    getText=[];
   }
+        let index = getText.findIndex((element) => {
+          return element.regfnev === felh.value;
+        })
+        if (index == -1 || getText[index].regpw != password.value) {
+        alert("Hibás jelszó/felhasználónév");
+        counter++;
+          } else {
+        let currentfelh = getText[index].regfnev;
+        getText[index].regdate = new Date().toLocaleString().replace(",", "");
+        localStorage.setItem(localkey, JSON.stringify(getText));
+        localStorage.setItem(localkey2, JSON.stringify(currentfelh));
+        window.location.href = "../main/main.html";
+      }
+    
+  
   if(counter >2){
     check.classList.add("show");
     const textGenerator = () => {

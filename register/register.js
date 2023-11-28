@@ -20,67 +20,40 @@ let localkey = `${localprefix}-registered`;
 let errorlist = document.querySelector(".errorlist");
 let users = [];
 form.addEventListener("input", (e) => {
-  let error1 = [];
-  let error2 = [];
-  let error3 = [];
+  let errors=[];
   errorlist.innerHTML = "";
   const value1 = document.getElementById("nev").value;
   const value2 = document.getElementById("fnev").value;
 let value3=document.getElementById("pw").value;
-let numberorno=/\d/;
-let tesztnumber=numberorno.test(value3)
-  if (nev.value.length > 7) {
-    register.removeAttribute("disabled");
-  } else {
-    register.setAttribute("disabled", "");
-    error1.push("Túl rövid a név");
+  if (nev.value.length < 7) {
+   errors.push("Túl rövid a név")
+   }
+    if (fnev.value.length < 7 ) {
+    errors.push("Túl rövid a felhasználónév");
+   }
+  if (value1 === value2) {
+    errors.push("Nem lehet egyenlő a felhasználónév és a név.");
   }
-   if (fnev.value.length > 7) {
-    register.removeAttribute("disabled");
-  } else {
-    register.setAttribute("disabled", "");
-    error2.push("Túl rövid a felhasználónév");
-  }
-  if (value1 != value2) {
-    register.removeAttribute("disabled");
-  } else {
-    register.setAttribute("disabled", "");
-    error3.push("Nem lehet egyenlő a felhasználónév és a név.");
-  }
-  if (pw.value.length > 7) {
-    register.removeAttribute("disabled");
-  } else {
-    register.setAttribute("disabled", "");
-    error3.push("Túl rövid a jelszó");
-  }
-  const s = [...pw.value];
-  let s2 = s.some((element) => {
+  if (pw.value.length < 7) {
+    errors.push("Túl rövid a jelszó");
+  } 
+  const upper = [...pw.value];
+  let uppercheck = upper.some((element) => {
     return element === element.toUpperCase();
   });
-  if (s2 === true && tesztnumber === true) {
-    register.removeAttribute("disabled");
-  } else {
-    register.setAttribute("disabled", "");
-    error3.push("Nagybetűt vagy számot is tartalmaznia kell a jelszónak");
+  if (uppercheck === true) {
+      } else {
+    errors.push("Nagybetű/szám kötelező a jelszóban");
   }
-  error2.forEach((errortwo) => {
+  errors.forEach((errortwo) => {
     let div = document.createElement("div");
     div.innerHTML = errortwo;
     errorlist.appendChild(div);
   });
-  error1.forEach((errorone) => {
-    let div = document.createElement("div");
-    div.innerHTML = errorone;
-    errorlist.appendChild(div);
-  });
-  error3.forEach((errorthree) => {
-    let div = document.createElement("div");
-    div.innerHTML = errorthree;
-    errorlist.appendChild(div);
-  });
-  if (error1.length > 0 || error2.length > 0 || error3.length > 0) {
+   if (errors.length > 0 ) {
     register.setAttribute("disabled", "");
   } else {
+    register.removeAttribute("disabled");
   }
 });
 form.addEventListener("submit", (e) => {
